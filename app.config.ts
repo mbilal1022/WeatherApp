@@ -6,7 +6,7 @@ export default ({ config }: ConfigContext): ExpoConfig => {
     name: 'Weather App',
     slug: 'WeatherApp',
     version: '1.0.0',
-    orientation: 'portrait',
+    orientation: 'default',
     icon: './assets/images/icon.png',
     scheme: 'weatherapp',
     userInterfaceStyle: 'automatic',
@@ -59,6 +59,7 @@ export default ({ config }: ConfigContext): ExpoConfig => {
     },
     extra: {
       WEATHER_API_KEY: process.env.WEATHER_API_KEY,
+      BASE_URL: process.env.BASE_URL,
     },
   };
 };
