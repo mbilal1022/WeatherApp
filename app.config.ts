@@ -3,7 +3,7 @@ import { ConfigContext, ExpoConfig } from 'expo/config';
 export default ({ config }: ConfigContext): ExpoConfig => {
   return {
     ...config,
-    name: 'WeatherApp',
+    name: 'Weather App',
     slug: 'WeatherApp',
     version: '1.0.0',
     orientation: 'portrait',
@@ -17,10 +17,8 @@ export default ({ config }: ConfigContext): ExpoConfig => {
     },
     android: {
       adaptiveIcon: {
-        backgroundColor: '#E6F4FE',
-        foregroundImage: './assets/images/android-icon-foreground.png',
-        backgroundImage: './assets/images/android-icon-background.png',
-        monochromeImage: './assets/images/android-icon-monochrome.png',
+        backgroundColor: '#30B4E0',
+        foregroundImage: './assets/images/adaptive-icon.png',
       },
       edgeToEdgeEnabled: true,
       predictiveBackGestureEnabled: false,
@@ -36,9 +34,22 @@ export default ({ config }: ConfigContext): ExpoConfig => {
         'expo-splash-screen',
         {
           image: './assets/images/splash-icon.png',
-          imageWidth: 200,
+          imageWidth: 150,
           resizeMode: 'contain',
-          backgroundColor: '#ffffff',
+          backgroundColor: '#30B4E0',
+        },
+      ],
+      [
+        'expo-location',
+        {
+          locationAlwaysAndWhenInUsePermission:
+            'Allow $(PRODUCT_NAME) to use your location.',
+        },
+      ],
+      [
+        'expo-dev-client',
+        {
+          launchMode: 'most-recent',
         },
       ],
     ],
